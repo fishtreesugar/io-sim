@@ -44,7 +44,7 @@ import           Control.Monad.Class.MonadSTM
 
 import qualified System.Timeout as IO
 
-data TimeoutState = TimeoutPending | TimeoutFired | TimeoutCancelled
+data TimeoutState = TimeoutPending | TimeoutFired | TimeoutCancelled deriving Eq
 
 class Monad m => MonadDelay m where
   threadDelay :: DiffTime -> m ()
